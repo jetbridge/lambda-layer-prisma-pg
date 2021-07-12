@@ -1,0 +1,47 @@
+{
+  "name": "@jetkit/layer-prisma-pg",
+  "description": "AWS Lambda Layer for Node.js with prisma and pg",
+  "version": "1.0.0",
+  "keywords": [
+    "aws",
+    "lambda",
+    "layer",
+    "node",
+    "nodejs",
+    "psql",
+    "postgres",
+    "postgresql",
+    "lambda layer"
+  ],
+  "author": "Mischa <mischa@jetbridge.com>",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jetbridge/lambda-layer-prisma-pg"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc -w",
+    "prezip": "bash build.sh",
+    "zip": "npm run build && rm -f dist/nodejs.zip; zip dist/nodejs.zip nodejs -r",
+    "prepack": "npm run zip"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-lambda": "1.111.0",
+    "@aws-cdk/core": "1.111.0"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "aws-cdk": "1.111.0",
+    "ts-node": "latest",
+    "typescript": "latest"
+  }
+}
