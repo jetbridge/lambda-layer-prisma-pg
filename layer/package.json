@@ -5,6 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "pg": "latest",
-    "prisma": "latest"
+      "prisma": "latest",
+      "@prisma/client": "latest",
+    "@prisma/migrate": "latest"
   }
 }
