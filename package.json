@@ -28,10 +28,10 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && npm run zip",
     "start": "tsc -w",
     "prezip": "bash build.sh",
-    "zip": "npm run build && rm -f dist/nodejs.zip; zip dist/nodejs.zip nodejs -r",
+    "zip": "rm -f dist/nodejs.zip; zip dist/nodejs.zip nodejs -r",
     "prepack": "npm run zip"
   },
   "dependencies": {
@@ -41,6 +41,7 @@
   "devDependencies": {
     "@types/node": "latest",
     "aws-cdk": "1.111.0",
+    "jest-diff": "^27.0.6",
     "ts-node": "latest",
     "typescript": "latest"
   }
